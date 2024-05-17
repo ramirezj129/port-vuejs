@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-7">
+  <div class="container col-8">
     <h1>Blog Page</h1>
     <p>Coming Soon</p>
 

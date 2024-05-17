@@ -89,7 +89,6 @@
     justify-content: center;
     flex: 1;
     gap: 20px; /* Adjust gap as needed */
-    cursor: pointer;
   }
   
   .theme-toggler {

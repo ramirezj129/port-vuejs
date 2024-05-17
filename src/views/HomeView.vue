@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="container col-7">
+    <div class="container col-8">
       <img class="home-img" src="/icons/home_port.png" alt="CoverPhoto">
       <h2>Javier Ramirez Salazar</h2>
       <p>Hi there! I am an aspiring Software Developer who is passionate about Full-Stack Development. Through my studies, I've honed my abilities and I'm now eager to contribute to innovative software projects.</p>
@@ -108,7 +108,6 @@ onBeforeUnmount(() => {
   }
 });
 </script>
-
 <style scoped>
 .home {
   padding: 20px;
@@ -149,13 +148,14 @@ onBeforeUnmount(() => {
 
 .spotlight-card {
   display: flex;
-  align-items: contain;
+  align-items: center;
 }
 
 .spotlight-img {
   width: 100%;
   height: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Cover the area */
+  margin: auto;
 }
 
 @media (max-width: 575.98px) {
@@ -191,6 +191,7 @@ onBeforeUnmount(() => {
 
   .spotlight-img {
     width: 80%;
+    margin-bottom: 10px; /* Space between image and text */
   }
 }
 

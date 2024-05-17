@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-7">
+  <div class="container col-8">
     <h1>Portfolio Page</h1>
     <p>Check out my projects.</p>
 
