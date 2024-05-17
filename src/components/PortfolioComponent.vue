@@ -8,7 +8,7 @@
       <span>Loading...</span>
     </div>
 
-    <div v-else class="row row-cols-1 row-cols-lg-3 g-4">
+    <div v-else class="row row-cols-1 row-cols-xl-3 row-cols-md-2 g-4">
       <div class="col" v-for="(project, index) in projects" :key="index">
         <div class="card h-100">
           <img :src="project.imgUrl" class="card-img-top" alt="Project Image" @click="openModal(project.videoUrl)" loading="lazy">
@@ -139,12 +139,13 @@ onMounted(fetchProjects);
   border-radius: 8px;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
 }
 
 .card-img-top {
   width: 100%;
-  height: 205px; /* Adjust the height as needed */
-  object-fit: initial;
+  height: 190px; /* Adjust the height as needed */
+  object-fit: inherit; /* Ensure the image covers the area */
   cursor: pointer; /* Add cursor pointer to indicate the image is clickable */
 }
 
@@ -163,7 +164,12 @@ onMounted(fetchProjects);
   border: 0;
 }
 
-/* Extra small screens (max-width: 575.98px) */
+/* Specific adjustments for the narrow cards */
+.card:nth-child(1), /* Adjust for Fitness Tracker App */
+.card:nth-child(2)  /* Adjust for Expense Tracker App */ {
+  min-height: 350px; /* Ensure a minimum height */
+}
+
 @media (max-width: 575.98px) {
   .modal-dialog {
     max-width: 100%; /* Full width for very small screens */
@@ -173,9 +179,13 @@ onMounted(fetchProjects);
   .video-frame {
     height: 40vh; /* Smaller height for very small screens */
   }
+
+  .card:nth-child(1), /* Adjust for Fitness Tracker App on small screens */
+  .card:nth-child(2)  /* Adjust for Expense Tracker App on small screens */ {
+    min-height: 300px; /* Ensure a minimum height for very small screens */
+  }
 }
 
-/* Small to mid-sized screens (min-width: 576px and max-width: 991.98px) */
 @media (min-width: 576px) and (max-width: 991.98px) {
   .modal-dialog {
     max-width: 70%;
@@ -184,9 +194,13 @@ onMounted(fetchProjects);
   .video-frame {
     height: 400px; /* Adjusted height for mid-sized screens */
   }
+
+  .card:nth-child(1), /* Adjust for Fitness Tracker App on mid-sized screens */
+  .card:nth-child(2)  /* Adjust for Expense Tracker App on mid-sized screens */ {
+    min-height: 320px; /* Ensure a minimum height for mid-sized screens */
+  }
 }
 
-/* Large screens (min-width: 992px) */
 @media (min-width: 992px) {
   .modal-dialog {
     max-width: 80%;
@@ -194,6 +208,11 @@ onMounted(fetchProjects);
 
   .video-frame {
     height: 600px; /* Fixed height for larger screens */
+  }
+
+  .card:nth-child(1), /* Adjust for Fitness Tracker App on large screens */
+  .card:nth-child(2)  /* Adjust for Expense Tracker App on large screens */ {
+    min-height: 350px; /* Ensure a minimum height for larger screens */
   }
 }
 </style>

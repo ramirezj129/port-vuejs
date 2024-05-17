@@ -31,7 +31,7 @@
             <li><router-link to="/" exact-active-class="active">Home</router-link></li>
             <li><router-link to="/about" exact-active-class="active">About</router-link></li>
             <li><router-link to="/portfolio" exact-active-class="active">Portfolio</router-link></li>
-            <li><router-link to="/contact" exact-active-class="active">Contact</router-link></li>
+            <li><router-link to="/blog" exact-active-class="active">Blog</router-link></li>
           </ul>
         </li>
       </ul>

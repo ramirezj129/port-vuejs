@@ -6,60 +6,62 @@
       <p>Hi there! I am an aspiring Software Developer who is passionate about Full-Stack Development. Through my studies, I've honed my abilities and I'm now eager to contribute to innovative software projects.</p>
     
       <div class="card-container">
-        <!-- First card -->
-        <div class="card" style="max-width: 540px;">
+        <!-- First card: Project Spotlight -->
+        <div class="card spotlight-card" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-12 col-md-4">
-              <img src="/icons/vue-logo.png" class="img-fluid rounded-start" alt="...">
+            <div class="col-12 col-md-4 d-flex align-items-center">
+              <img src="/icons/vue-logo.png" class="img-fluid rounded-start spotlight-img" alt="Vue.js Logo">
             </div>
-            <div class="col-md-8">
+            <div class="col-12 col-md-8">
               <div class="card-body">
                 <h5 class="card-title">Project Spotlight <i class="far fa-star"></i></h5>
                 <h6><li><strong>Fitness Tracker</strong></li></h6>
                 <p>Simple, Responsive Fitness Tracker Webapp allowing users to login, create, track and log their individual workouts.</p>
                 <p>Technologies used:</p>
-                <p>
-                  <img src="/icons/C-Logo.png" alt="C#" width="34px" >
-                  <img src="/icons/Net-Logo.png" alt="Net" width="50px" >
-                  <img src="/icons/vue-logo.png" alt="Vue.js" width="34px" >
-                  <img src="/icons/postman-logo.svg" alt="Postman" width="40px" >
-                  <img src="/icons/mssql.svg" class="mx-1" alt="Mssql" width="34px" >
-                </p>
+                <div class="tech-icons">
+                  <img src="/icons/C-Logo.png" alt="C#" width="34px">
+                  <img src="/icons/Net-Logo.png" alt=".NET" width="50px">
+                  <img src="/icons/vue-logo.png" alt="Vue.js" width="34px">
+                  <img src="/icons/postman-logo.svg" alt="Postman" width="40px">
+                  <img src="/icons/mssql.svg" alt="MSSQL" width="34px">
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- LinkedIn card -->
         <div class="card" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-12">
+            <div class="col-12">
               <div class="card-body">
-                <h4>Linked-In <i class="fab fa-linkedin"></i></h4>
-                <h6><strong>Connect with me </strong></h6>
+                <h4>LinkedIn <i class="fab fa-linkedin"></i></h4>
+                <h6><strong>Connect with me</strong></h6>
                 <p>If you have any opportunities or advice to share, please feel free to message me.</p>
-                <a href="https://www.linkedin.com/in/ramirezj129/" class="btn btn-primary col-4 offset-4 mt-4">Connect</a>
+                <a href="https://www.linkedin.com/in/ramirezj129/" class="btn btn-primary mt-4">Connect</a>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- GitHub card -->
         <div class="card" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-12">
+            <div class="col-12">
               <div class="card-body">
-                <h4>Github <i class="fab fa-github"></i></h4>
-                <p>Check out my Github!</p>
+                <h4>GitHub <i class="fab fa-github"></i></h4>
+                <p>Check out my GitHub!</p>
                 <p>My portfolio is hosted on GitHub Pages. You can find the source code and contribute to the project by visiting the repository:</p>
-
-                <a href="https://github.com/ramirezj129" class="btn btn-secondary">Github</a>
+                <a href="https://github.com/ramirezj129" class="btn btn-secondary">GitHub</a>
               </div>
             </div>
           </div>
         </div>
         
+        <!-- Map card -->
         <div class="card" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-12">
+            <div class="col-12">
               <div class="card-body">
                 <!-- Map container -->
                 <div id="map" class="map-container"></div>
@@ -67,12 +69,13 @@
             </div>
           </div>
         </div>
-        
-        
       </div>
     </div>
   </div>
 </template>
+
+
+
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import mapboxgl from 'mapbox-gl';
@@ -116,7 +119,7 @@ onBeforeUnmount(() => {
 
 .home-img {
   border-radius: 100%;
-  width: 40%;
+  width: 80%;
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 20px;
 }
@@ -134,9 +137,8 @@ onBeforeUnmount(() => {
   color: var(--text-color);
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
   width: 100%;
-  max-width: 300px;
+  max-width: 540px; /* Consistent max-width */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
@@ -145,27 +147,86 @@ onBeforeUnmount(() => {
   transform: scale(1.05);
 }
 
-@media (min-width: 768px) {
+.spotlight-card {
+  display: flex;
+  align-items: contain;
+}
+
+.spotlight-img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Cover the area */
+}
+
+@media (max-width: 575.98px) {
   .home-img {
-    width: 20%;
+    width: 80%;
+    margin: 0 auto 20px; /* Center the image on small screens */
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%; /* Ensure cards take full width on small screens */
+    min-height: 100px; /* Adjust minimum height for smaller screens */
+    padding: 3px; /* Adjust padding for smaller screens */
+  }
+
+  .card .card-body h4, .card .card-body h5, .card .card-body h6 {
+    font-size: 1.2rem; /* Adjust font size for headings */
+  }
+
+  .card .card-body p {
+    font-size: 0.9rem; /* Adjust font size for paragraphs */
+  }
+
+  .btn {
+    width: 100%; /* Buttons take full width on small screens */
+    margin-top: 10px;
+  }
+
+  .spotlight-card .row {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center the items */
+  }
+
+  .spotlight-img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .home-img {
+    width: 40%;
   }
 
   .card {
     width: 100%;
   }
 
-  .img-fluid {
-    padding-top: 40%;
+  .spotlight-img {
+    width: 100%;
+    height: 100%; /* Ensure image covers the designated space */
+  }
+}
+
+@media (min-width: 992px) {
+  .home-img {
+    width: 20%;
+  }
+
+  .card {
+    width: 48%;
+  }
+
+  .spotlight-img {
+    width: 100%;
+    height: 100%; /* Ensure image covers the designated space */
   }
 }
 
 @media (min-width: 1262px) {
   .home-img {
     width: 15%;
-  }
-
-  .card {
-    width: 48%;
   }
 }
 
