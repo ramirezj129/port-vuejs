@@ -57,9 +57,9 @@ const fetchProjects = async () => {
       videoUrl: 'https://www.youtube.com/embed/video_id1',
     },
     {
-      title: 'Expense Tracker App - Update Soon',
+      title: 'Expense Tracker App',
       description: 'Utilized Vue.js frontend, and Django for backend for seamless integration to create an expense tracker allowing users to calculate their expenses, login and view charts of their spending.',
-      imgUrl: '/port-img/',
+      imgUrl: '/port-img/Expense-Tracker.png',
       videoUrl: 'https://www.youtube.com/embed/video_id2',
     },
     {
