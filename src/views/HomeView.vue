@@ -52,7 +52,8 @@
               <div class="card-body">
                 <h4>GitHub <i class="fab fa-github"></i></h4>
                 <p>Check out my GitHub!</p>
-                <p>My portfolio is hosted on GitHub Pages. You can find the source code and contribute to the project by visiting the repository:</p>
+                <p>My portfolio is on GitHub. </p>
+                <p>You can find the source code and contribute to my other projects by visiting my page:</p>
                 <a href="https://github.com/ramirezj129" class="btn btn-secondary">GitHub</a>
               </div>
             </div>
