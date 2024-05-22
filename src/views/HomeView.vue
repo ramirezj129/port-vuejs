@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <div class="container col-8">
-      <img class="home-img" src="/icons/home_port.png" alt="CoverPhoto">
+      <img v-if="themeState.theme === 'dark-mode'" src="/icons/home-port-dark.png" alt="Dark image" class="home-img">
+      <img v-else src="/icons/home-port-light.png" alt="Light image" class="home-img">
       <h2>Javier Ramirez Salazar</h2>
       <p>Hi there! I am an aspiring Software Developer who is passionate about Full-Stack Development. Through my studies, I've honed my abilities and I'm now eager to contribute to innovative software projects.</p>
     
@@ -78,6 +79,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { themeState, toggleTheme } from '../theme.js';
 import mapboxgl from 'mapbox-gl';
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;

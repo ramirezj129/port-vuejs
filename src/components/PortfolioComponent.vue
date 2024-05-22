@@ -51,14 +51,14 @@ const fetchProjects = async () => {
   await new Promise(resolve => setTimeout(resolve, 1000));
   projects.value = [
     {
-      title: 'Fitness Tracker App - Update Soon',
-      description: 'Using .NET, Vue.js, Entity Framework I developed a Fitness tracker allowing users to login, create, track, and log their measurements.',
-      imgUrl: '/port-img/',
+      title: 'Fitness Tracker App',
+      description: 'Using .NET with Entity Framework, MSSQL Database, Vue.js frontend, I developed a Fitness tracker allowing users to login, create, track, and log their measurements.',
+      imgUrl: '/port-img/FT-home.png',
       videoUrl: 'https://www.youtube.com/embed/video_id1',
     },
     {
       title: 'Expense Tracker App',
-      description: 'Utilized Vue.js frontend, and Django for backend for seamless integration to create an expense tracker allowing users to calculate their expenses, login and view charts of their spending.',
+      description: 'Utilized Vue.js frontend, and Django for backend for seamless integration to create an expense tracker allowing users to calculate their expenses, login and view a chart of their spending categories.',
       imgUrl: '/port-img/Expense-Tracker.png',
       videoUrl: 'https://www.youtube.com/embed/video_id2',
     },
