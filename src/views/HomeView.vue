@@ -10,7 +10,7 @@
         <div class="card spotlight-card" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-12 col-md-4 d-flex align-items-center">
-              <img src="/icons/vue-logo.png" class="img-fluid rounded-start spotlight-img" alt="Vue.js Logo">
+              <img src="/icons/home-img.jpg" class="img-fluid rounded-start spotlight-img" alt="Vue.js Logo">
             </div>
             <div class="col-12 col-md-8">
               <div class="card-body">
@@ -209,6 +209,15 @@ onBeforeUnmount(() => {
     height: 100%; /* Ensure image covers the designated space */
   }
 }
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  .spotlight-img {
+    width: 100%;
+    padding-left: 10px;
+    height: 100%; /* Ensure image covers the designated space */
+  }
+
+}
 
 @media (min-width: 992px) {
   .home-img {
@@ -221,6 +230,7 @@ onBeforeUnmount(() => {
 
   .spotlight-img {
     width: 100%;
+    padding-left: 10px;
     height: 100%; /* Ensure image covers the designated space */
   }
 }
