@@ -185,6 +185,11 @@ onMounted(fetchProjects);
     min-height: 300px; /* Ensure a minimum height for very small screens */
   }
 }
+@media (max-width: 575.98px) {
+  .container {
+    width: 90%; /* Adjust the width according to your preference */
+  }
+}
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .modal-dialog {

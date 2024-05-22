@@ -114,4 +114,9 @@
   background-color: var(--hover-bg-color);
   color: rgb(159, 159, 159);
 }
+@media (max-width: 575.98px) {
+  .container {
+    width: 90%; /* Adjust the width according to your preference */
+  }
+}
 </style>

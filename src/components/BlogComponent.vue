@@ -45,4 +45,9 @@
   background-color: var(--hover-bg-color); /* Background color on hover */
   color: var(--hover-text-color); /* Text color on hover */
 }
+@media (max-width: 575.98px) {
+  .container {
+    width: 90%; /* Adjust the width according to your preference */
+  }
+}
 </style>

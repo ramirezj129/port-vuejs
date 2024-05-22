@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <div class="container col-8">
-      <img v-if="themeState.theme === 'dark-mode'" src="/icons/home-port-dark.png" alt="Dark image" class="home-img">
-      <img v-else src="/icons/home-port-light.png" alt="Light image" class="home-img">
+      <img :src="currentImageSrc" alt="Profile Image" class="home-img">
       <h2>Javier Ramirez Salazar</h2>
       <p>Hi there! I am an aspiring Software Developer who is passionate about Full-Stack Development. Through my studies, I've honed my abilities and I'm now eager to contribute to innovative software projects.</p>
     
@@ -76,10 +75,8 @@
   </div>
 </template>
 
-
-
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import { themeState, toggleTheme } from '../theme.js';
 import mapboxgl from 'mapbox-gl';
 
@@ -87,6 +84,13 @@ const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
 let map;
 const mapInitialized = ref(false);
+
+const darkImage = '/icons/home-port-dark.png';
+const lightImage = '/icons/home-port-light.png';
+
+const currentImageSrc = computed(() => {
+  return themeState.theme === 'dark-mode' ? darkImage : lightImage;
+});
 
 onMounted(() => {
   document.documentElement.style.setProperty('--transition-duration', '0s');
@@ -195,6 +199,11 @@ onBeforeUnmount(() => {
   .spotlight-img {
     width: 80%;
     margin-bottom: 10px; /* Space between image and text */
+  }
+}
+@media (max-width: 575.98px) {
+  .container {
+    width: 90%; /* Adjust the width according to your preference */
   }
 }
 
