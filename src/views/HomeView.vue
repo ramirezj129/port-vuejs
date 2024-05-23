@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container col-8">
-      <img :src="currentImageSrc" alt="Profile Image" class="home-img">
+      <img :src="currentImageSrc" alt="Profile Image" class="home-img" :class="{ loaded: imageLoaded }" @load="onImageLoad">
       <h2>Javier Ramirez Salazar</h2>
       <p>Hi there! I am an aspiring Software Developer who is passionate about Full-Stack Development. Through my studies, I've honed my abilities and I'm now eager to contribute to innovative software projects.</p>
     
@@ -77,7 +77,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
-import { themeState, toggleTheme } from '../theme.js';
+import { themeState } from '../theme.js';
 import mapboxgl from 'mapbox-gl';
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
@@ -88,12 +88,30 @@ const mapInitialized = ref(false);
 const darkImage = '/icons/home-port-dark.png';
 const lightImage = '/icons/home-port-light.png';
 
+const imageLoaded = ref(false);
+
+// Function to preload images
+const preloadImages = () => {
+  [darkImage, lightImage].forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
 const currentImageSrc = computed(() => {
+  imageLoaded.value = false; // Reset the loaded state when the image source changes
   return themeState.theme === 'dark-mode' ? darkImage : lightImage;
 });
 
+const onImageLoad = () => {
+  imageLoaded.value = true;
+};
+
 onMounted(() => {
   document.documentElement.style.setProperty('--transition-duration', '0s');
+
+  // Preload images
+  preloadImages();
 
   map = new mapboxgl.Map({
     container: 'map',
@@ -115,6 +133,7 @@ onBeforeUnmount(() => {
   }
 });
 </script>
+
 <style scoped>
 .home {
   padding: 20px;
@@ -128,6 +147,14 @@ onBeforeUnmount(() => {
   width: 80%;
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 20px;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Add transition for fade and transform effect */
+  opacity: 0; /* Start with opacity 0 */
+  transform: scale(0.95); /* Start with a slight scale down */
+}
+
+.home-img.loaded {
+  opacity: 1; /* Set opacity to 1 when image is loaded */
+  transform: scale(1); /* Scale up to normal size */
 }
 
 .card-container {
@@ -201,11 +228,6 @@ onBeforeUnmount(() => {
     margin-bottom: 10px; /* Space between image and text */
   }
 }
-@media (max-width: 575.98px) {
-  .container {
-    width: 90%; /* Adjust the width according to your preference */
-  }
-}
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .home-img {
@@ -221,14 +243,13 @@ onBeforeUnmount(() => {
     height: 100%; /* Ensure image covers the designated space */
   }
 }
-@media (min-width: 768px) and (max-width: 991.98px) {
 
+@media (min-width: 768px) and (max-width: 991.98px) {
   .spotlight-img {
     width: 100%;
     padding-left: 10px;
     height: 100%; /* Ensure image covers the designated space */
   }
-
 }
 
 @media (min-width: 992px) {
