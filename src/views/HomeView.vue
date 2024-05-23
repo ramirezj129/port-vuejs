@@ -191,10 +191,16 @@ onBeforeUnmount(() => {
   object-fit: contain; /* Cover the area */
   margin: auto;
 }
+@media (max-width: 575.98px) {
+  .container {
+    width: 90%; /* Adjust the width according to your preference */
+  }
+  
+}
 
 @media (max-width: 575.98px) {
   .home-img {
-    width: 80%;
+    width: 50%;
     margin: 0 auto 20px; /* Center the image on small screens */
   }
 
