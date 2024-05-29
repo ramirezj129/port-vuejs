@@ -60,7 +60,7 @@ const fetchProjects = async () => {
       title: 'Expense Tracker App',
       description: 'Utilized Vue.js frontend, and Django for backend for seamless integration to create an expense tracker allowing users to calculate their expenses, login and view a chart of their spending categories.',
       imgUrl: '/port-img/Expense-Tracker.png',
-      videoUrl: 'https://www.youtube.com/embed/video_id2',
+      videoUrl: 'https://drive.google.com/file/d/1y7bBz25A1n9XxTByLucJMzzDNZqYGjsi/preview',
     },
     {
       title: 'Blog Web App - MERN Stack',
