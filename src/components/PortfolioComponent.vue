@@ -54,7 +54,7 @@ const fetchProjects = async () => {
       title: 'Fitness Tracker App',
       description: 'Using .NET with Entity Framework, MSSQL Database, Vue.js frontend, I developed a Fitness tracker allowing users to login, create, track, and log their measurements.',
       imgUrl: '/port-img/FT-home.png',
-      videoUrl: 'https://www.youtube.com/embed/video_id1',
+      videoUrl: 'https://drive.google.com/file/d/1ejLnvRF3JBGaFB4HfQoKnOwnOR_y6tHT/preview',
     },
     {
       title: 'Expense Tracker App',
