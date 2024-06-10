@@ -10,7 +10,9 @@
         <div class="card spotlight-card" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-12 col-md-4 d-flex align-items-center">
-              <img src="/icons/home-img.jpg" class="img-fluid rounded-start spotlight-img" alt="Vue.js Logo">
+              <router-link to="/portfolio">
+                <img src="/icons/home-img.jpg" class="img-fluid rounded-start spotlight-img" alt="Vue.js Logo">
+              </router-link>
             </div>
             <div class="col-12 col-md-8">
               <div class="card-body">
@@ -230,7 +232,7 @@ onBeforeUnmount(() => {
   }
 
   .spotlight-img {
-    width: 80%;
+    width: 100%;
     margin-bottom: 10px; /* Space between image and text */
   }
 }
