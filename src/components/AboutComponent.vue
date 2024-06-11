@@ -10,13 +10,13 @@
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
+        <div class="carousel-item active" data-bs-interval="6000">
+          <img src="/icons/about1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="6000">
           <img src="/icons/vue-logo.png" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="/icons/vue-logo.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
+        <div class="carousel-item" data-bs-interval="6000">
           <img src="/icons/vue-logo.png" class="d-block w-100" alt="...">
         </div>
       </div>
@@ -101,6 +101,7 @@
   max-width: 450px;
   margin: 0 auto;
 }
+
 
 .list-group-item {
   border-radius: 8px;
