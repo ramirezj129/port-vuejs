@@ -3,18 +3,18 @@
     <div class="container col-8">
       <img :src="currentImageSrc" alt="Profile Image" class="home-img" :class="{ loaded: imageLoaded }" @load="onImageLoad">
       <h2>Javier Ramirez Salazar</h2>
-      <p>Hi there! I am an aspiring Software Developer who is passionate about Full-Stack Development. Through my studies, I've honed my abilities and I'm now eager to contribute to innovative software projects.</p>
+      <p>Hi there! I am an aspiring Software Developer who is passionate about Full-Stack Development. I'm eager to learn and contribute to innovative software projects.</p>
     
       <div class="card-container">
         <!-- First card: Project Spotlight -->
         <div class="card spotlight-card" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-12 col-md-4 d-flex align-items-center">
+          <div class="row g-0 d-flex justify-content-between m-3">
+            <div class="col-12 col-md-5 col-lg-4">
               <router-link to="/portfolio">
-                <img src="/icons/home-img.jpg" class="img-fluid rounded-start spotlight-img" alt="Vue.js Logo">
+                <img src="/icons/home-img.jpg" class="img-fluid p-0 rounded-start spotlight-img" alt="Vue.js Logo">
               </router-link>
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-7 col-lg-8">
               <div class="card-body">
                 <h5 class="card-title">Project Spotlight <i class="far fa-star"></i></h5>
                 <h6><li><strong>Fitness Tracker</strong></li></h6>
@@ -185,6 +185,7 @@ onBeforeUnmount(() => {
 .spotlight-card {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .spotlight-img {

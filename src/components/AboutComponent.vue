@@ -14,7 +14,7 @@
           <img src="/icons/about1.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item" data-bs-interval="6000">
-          <img src="/icons/vue-logo.png" class="d-block w-100" alt="...">
+          <img src="/icons/uzi.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item" data-bs-interval="6000">
           <img src="/icons/vue-logo.png" class="d-block w-100" alt="...">
@@ -32,8 +32,30 @@
 
     <div class="list-group custom-list-group mx-auto">
       <li><strong>B.S. In Computer Science</strong></li>
-      <p>Hi, my name is Javier I was born in Mexico and raised in Houston, TX. As a software developer I am excited in the ever-evolving world of technology. </p>
+      <p>Hi, my name is Javier and my passion lies in fullstack software development I am excited in the ever-evolving world of technology. </p>
       <p>I have gained extensive knowledge in a range of programming languages, including C#, Python, and Javascript </p>
+      <p class="mt-2 ">
+        <h6>Hobbies and Interests:</h6>
+        <div class="row mt-3">
+          <div class="col-6 d-flex justify-content-evenly">
+            <ul>
+              <li> Running</li>
+              <li> Weight Training</li>
+              <li> Personal Projects</li>
+
+
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Cooking</li>
+              <li>Video Games</li>
+
+
+            </ul>
+          </div>
+        </div>
+      </p>
     </div>
 
     <!-- List Group -->

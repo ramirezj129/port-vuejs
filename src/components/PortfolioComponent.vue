@@ -47,7 +47,7 @@ const currentVideoUrl = ref('');
 const loading = ref(true);
 
 const fetchProjects = async () => {
-  // Simulating an API call to fetch projects
+
   await new Promise(resolve => setTimeout(resolve, 1000));
   projects.value = [
     {
