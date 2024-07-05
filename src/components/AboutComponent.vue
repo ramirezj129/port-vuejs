@@ -2,6 +2,7 @@
   <div class="container col-8">
     <h1>About Page</h1>
     <p>A little more about me.</p>
+    
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide custom-carousel mx-auto my-5" data-bs-ride="carousel">
       <div class="carousel-indicators">
