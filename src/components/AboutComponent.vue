@@ -12,13 +12,13 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="6000">
+          <img src="/icons/aboutH.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="6000">
           <img src="/icons/about1.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item" data-bs-interval="6000">
           <img src="/icons/uzi.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item" data-bs-interval="6000">
-          <img src="/icons/vue-logo.png" class="d-block w-100" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -33,8 +33,8 @@
 
     <div class="list-group custom-list-group mx-auto">
       <li><strong>B.S. In Computer Science</strong></li>
-      <p>Hi, my name is Javier and my passion lies in fullstack software development I am excited in the ever-evolving world of technology. </p>
-      <p>I have gained extensive knowledge in a range of programming languages, including C#, Python, and Javascript </p>
+      <p>Hi, my name is Javier and my passion lies in full-stack software development. I am actively learning new technologies and gaining valuable insights in the field of tech.</p>
+      <p>I have gained knowledge in a range of programming languages, including C#, Python, and Javascript </p>
       <p class="mt-2 ">
         <h6>Hobbies and Interests:</h6>
         <div class="row mt-3">
