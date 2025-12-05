@@ -2,30 +2,60 @@
   <div class="container col-8">
     <h1>About Page</h1>
     <p>A little more about me.</p>
-    
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide custom-carousel mx-auto my-5" data-bs-ride="carousel">
+    <div
+      id="carouselExampleDark"
+      class="carousel carousel-dark slide custom-carousel mx-auto my-5"
+      data-bs-ride="carousel"
+    >
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="6000">
-          <img src="/icons/aboutH.jpg" class="d-block w-100" alt="...">
+          <img src="/icons/aboutH.jpg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item" data-bs-interval="6000">
-          <img src="/icons/about1.png" class="d-block w-100" alt="...">
+          <img src="/icons/about1.png" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item" data-bs-interval="6000">
-          <img src="/icons/uzi.png" class="d-block w-100" alt="...">
+          <img src="/icons/uzi.png" class="d-block w-100" alt="..." />
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -33,43 +63,55 @@
 
     <div class="list-group custom-list-group mx-auto">
       <li><strong>B.S. In Computer Science</strong></li>
-      <p>Hi, my name is Javier and my passion lies in full-stack software development. I am actively learning new technologies and gaining valuable insights in the field of tech.</p>
-      <p>I have gained knowledge in a range of programming languages, including C#, Python, and Javascript </p>
-      <p class="mt-2 ">
-        <h6>Hobbies and Interests:</h6>
-        <div class="row mt-3">
-          <div class="col-6 d-flex justify-content-evenly">
-            <ul>
-              <li> Running</li>
-              <li> Weight Training</li>
-              <li> Personal Projects</li>
-
-
-            </ul>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Cooking</li>
-              <li>Video Games</li>
-
-
-            </ul>
-          </div>
-        </div>
+      <p>
+        Hi, my name is Javier and my passion lies in full-stack software
+        development. I am actively learning new technologies and gaining
+        valuable insights in the field of tech.
       </p>
+      <p>
+        I have gained knowledge in a range of programming languages, including
+        C#, Python, and Javascript
+      </p>
+      <p class="mt-2">
+        <span class="h6">Hobbies and Interests:</span>
+      </p>
+      <div class="row mt-3">
+        <div class="col-6 d-flex justify-content-evenly">
+          <ul>
+            <li>Running</li>
+            <li>Weight Training</li>
+            <li>Personal Projects</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul>
+            <li>Cooking</li>
+            <li>Video Games</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- List Group -->
     <div class="list-group custom-list-group mx-auto my-1">
-      <a href="https://www.linkedin.com/in/ramirezj129/" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      <a
+        href="https://www.linkedin.com/in/ramirezj129/"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+      >
         <span><i class="fab fa-linkedin"></i> LinkedIn</span>
         <i class="fas fa-arrow-right"></i>
       </a>
-      <a href="https://github.com/ramirezj129" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      <a
+        href="https://github.com/ramirezj129"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+      >
         <span><i class="fab fa-github"></i> GitHub</span>
         <i class="fas fa-arrow-right"></i>
       </a>
-      <a href="/icons/Javier_Resume.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      <a
+        href="/icons/Javier_Resume.pdf"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+      >
         <span><i class="far fa-file"></i> Resume</span>
         <i class="fas fa-arrow-right"></i>
       </a>
@@ -77,8 +119,7 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .container {
@@ -124,7 +165,6 @@
   max-width: 450px;
   margin: 0 auto;
 }
-
 
 .list-group-item {
   border-radius: 8px;
