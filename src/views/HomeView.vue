@@ -16,7 +16,7 @@
       <MagicBento
         :card-data="cardData"
         :text-auto-hide="true"
-        :enable-stars="true"
+        :enable-stars="false"
         :enable-spotlight="true"
         :enable-border-glow="true"
         :enable-tilt="true"
@@ -31,52 +31,53 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import mapboxgl from "mapbox-gl";
 import MagicBento from "../components/MagicBento.vue";
 
 const cardData = [
   {
     color: "#091118",
-    label: "Insights",
-    title: "Analytics",
-    description: "Track user behavior",
-    body: '<i class="fas fa-chart-line"></i>',
+    label: "Project Spotlight",
+    title: "",
+    description: "Working on a new project",
+    body: '<a href="https://github.com/ramirezj129" target="_blank" rel="noopener"><i class="fab fa-github"></i><span class="ml-1">View Repo</span></a>',
   },
   {
     color: "#091118",
-    label: "Overview",
-    title: "Dashboard",
-    description: "Centralized data view",
-    body: '<i class="fas fa-tachometer-alt"></i>',
+    label: "Currently Learning",
+    title: "",
+    description: "Leveraging AI and LLMs to build smarter applications",
+    body: '<i class="fas fa-brain"></i><i class="fas fa-robot"></i>',
+  },
+  {
+    color: "#091118",
+    label: "Location",
+    title: "",
+    description: "Houston, TX",
+    body: '<div id="map" class="home-map"></div>',
+  },
+  {
+    color: "#091118",
+    label: "My Links:",
+    title: "Lets Connect",
+    description:
+      "If you have any opportunities or advice to share, please feel free to message me.",
+    body: '<div class="link-grid"><a href="https://www.linkedin.com/in/ramirezj129/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a><a href="https://github.com/ramirezj129" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>GitHub</span></a><a href="https://www.kaggle.com/javier154" target="_blank" rel="noopener"><i class="fab fa-kaggle"></i><span>Kaggle</span></a><a href="/icons/Javier_Resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span>Resume</span></a></div>',
   },
   {
     color: "#091118",
     label: "",
-    title: "",
-    description: "Houston, TX",
-    body: '<a href="https://github.com/javier154" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>',
-  },
-  {
-    color: "#091118",
-    label: "My Links",
-    title: "Automation",
-    description: "Streamline workflows",
-    body: '<div><a href="https://www.linkedin.com/in/ramirezj129/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> <span class="text-sm mt-1">Linked-In</span></a> <div><a href="https://github.com/javier154" target="_blank" rel="noopener"><i class="fab fa-github"></i><span class="text-sm ml-1">GitHub</span></a></div></div>',
-  },
-  {
-    color: "#091118",
-    label: "Stack",
     title: "Tech I use",
     description: "Favorite tools",
-    body: '<i class="fab fa-vuejs"></i> <i class="fab fa-js"></i> <i class="fab fa-node-js"></i> <i class="fab fa-git-alt"></i>',
+    body: '<i class="fab fa-vuejs"></i> <i class="fab fa-js"></i> <i class="fab fa-node-js"></i> <i class="fa fa-database"></i>',
   },
   {
     color: "#091118",
-    label: "Protection",
-    title: "Security",
-    description: "Enterprise-grade protection",
-    body: '<i class="fas fa-shield-alt"></i>',
+    label: "Blog:",
+    title: "",
+    description: "Components and useful resources.",
+    body: '<a style="font-size: 17px;" href="/blog"><i class="fas fa-pen-nib mr-1"></i><span>Read Posts</span></a>',
   },
 ];
 
@@ -96,7 +97,7 @@ const preloadImages = () => {
   });
 };
 
-onMounted(() => {
+onMounted(async () => {
   document.documentElement.style.setProperty("--transition-duration", "0s");
 
   // Preload images
@@ -106,15 +107,25 @@ onMounted(() => {
   // whole app (which would break routing and the nav).
   if (!MAPBOX_ACCESS_TOKEN) {
     console.warn(
-      "VITE_MAPBOX_ACCESS_TOKEN is not set — skipping map. Add it to a .env file to enable the map.",
+      "VITE_MAPBOX_ACCESS_TOKEN is not set — skipping map. Set it in Netlify env (or a local .env) to enable the map.",
     );
+    document.documentElement.style.removeProperty("--transition-duration");
+    return;
+  }
+
+  // The #map container lives inside a MagicBento card body (rendered via
+  // v-html). Wait for the DOM to settle so the element exists before mounting.
+  await nextTick();
+  const mapEl = document.getElementById("map");
+  if (!mapEl) {
+    console.warn("Map container #map not found — skipping map init.");
     document.documentElement.style.removeProperty("--transition-duration");
     return;
   }
 
   try {
     map = new mapboxgl.Map({
-      container: "map",
+      container: mapEl,
       style: "mapbox://styles/javier154/clw875tcc007901p9bo4w5i63",
       center: [-95.366739, 29.754075], // Houston coordinates [longitude, latitude]
       zoom: 11,
@@ -287,6 +298,20 @@ onBeforeUnmount(() => {
 
 .map-container {
   height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+</style>
+
+<!--
+  Global (non-scoped) styles: the map lives inside a MagicBento card body
+  rendered with v-html, which scoped CSS cannot reach.
+-->
+<style>
+.home-map {
+  width: 100%;
+  height: 220px;
+  min-height: 180px;
   border-radius: 8px;
   overflow: hidden;
 }

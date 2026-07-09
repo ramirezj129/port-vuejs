@@ -858,6 +858,27 @@ const setupCardRef = (el: HTMLDivElement | null, index: number) => {
   color: rgb(v-bind(glowColor));
 }
 
+/* Links laid out 2 per row (e.g. LinkedIn / GitHub / Kaggle / Resume) */
+.card__body .link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1rem;
+  width: 100%;
+}
+
+.card__body .link-grid a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 17px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.card__body .link-grid a i {
+  font-size: 1.2rem;
+}
+
 .card-responsive {
   grid-template-columns: 1fr;
   width: 90%;
