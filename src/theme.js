@@ -1,23 +1,11 @@
 import { reactive, watchEffect } from "vue";
 
-// Load saved theme or default to light-mode
-const savedTheme = localStorage.getItem("theme") || "light-mode";
-
+// Dark mode only. Light mode and the theme toggle have been removed.
 export const themeState = reactive({
-  theme: savedTheme,
+  theme: "dark-mode",
 });
 
-// Function to toggle theme and save to localStorage
-export const toggleTheme = () => {
-  themeState.theme =
-    themeState.theme === "dark-mode" ? "light-mode" : "dark-mode";
-  localStorage.setItem("theme", themeState.theme);
-};
-
-// Watch for changes and update HTML attribute
+// Always apply the dark theme class so the CSS variables resolve site-wide.
 watchEffect(() => {
-  document.documentElement.setAttribute(
-    "class",
-    themeState.theme === "dark-mode" ? "dark_theme" : "light_theme"
-  );
+  document.documentElement.setAttribute("class", "dark_theme");
 });

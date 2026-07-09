@@ -1,118 +1,85 @@
 <template>
   <div class="home">
-    <div class="container col-8">
+    <div class="container col-9">
       <img
         src="/icons/home-port-light.png"
         alt="Profile Image"
         class="home-img"
       />
       <h2>Javier Ramirez Salazar</h2>
-      <p>Hi there! I am a Software Engineer in H-Town.</p>
-
-      <div class="card-container">
-        <!-- First card: Project Spotlight -->
-        <div class="card spotlight-card" style="max-width: 540px">
-          <div class="row g-0 d-flex justify-content-between m-3">
-            <div class="col-12 col-md-5 col-lg-4">
-              <router-link to="/portfolio">
-                <img
-                  src="/icons/home-img.jpg"
-                  class="img-fluid p-0 rounded-start spotlight-img"
-                  alt="Vue.js Logo"
-                />
-              </router-link>
-            </div>
-            <div class="col-12 col-md-7 col-lg-8">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Project Spotlight <i class="far fa-star"></i>
-                </h5>
-                <h6>
-                  <li><strong>Fitness Tracker</strong></li>
-                </h6>
-                <p>
-                  Simple, Responsive Fitness Tracker Webapp allowing users to
-                  login, create, track and log their individual workouts.
-                </p>
-                <p>Technologies used:</p>
-                <div class="tech-icons">
-                  <img src="/icons/C-Logo.png" alt="C#" width="34px" />
-                  <img src="/icons/Net-Logo.png" alt=".NET" width="50px" />
-                  <img src="/icons/vue-logo.png" alt="Vue.js" width="34px" />
-                  <img
-                    src="/icons/postman-logo.svg"
-                    alt="Postman"
-                    width="40px"
-                  />
-                  <img src="/icons/mssql.svg" alt="MSSQL" width="34px" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- LinkedIn card -->
-        <div class="card" style="max-width: 540px">
-          <div class="row g-0">
-            <div class="col-12">
-              <div class="card-body">
-                <h4>LinkedIn <i class="fab fa-linkedin"></i></h4>
-                <h6><strong>Connect with me</strong></h6>
-                <p>
-                  If you have any opportunities or advice to share, please feel
-                  free to message me.
-                </p>
-                <a
-                  href="https://www.linkedin.com/in/ramirezj129/"
-                  class="btn btn-primary mt-4"
-                  >Connect</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- GitHub card -->
-        <div class="card" style="max-width: 540px">
-          <div class="row g-0">
-            <div class="col-12">
-              <div class="card-body">
-                <h4>GitHub <i class="fab fa-github"></i></h4>
-                <p>Check out my GitHub!</p>
-                <p>My portfolio is on GitHub.</p>
-                <p>
-                  You can find the source code and contribute to my other
-                  projects by visiting my page:
-                </p>
-                <a
-                  href="https://github.com/ramirezj129"
-                  class="btn btn-secondary"
-                  >GitHub</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Map card -->
-        <div class="card" style="max-width: 540px">
-          <div class="row g-0">
-            <div class="col-12">
-              <div class="card-body">
-                <!-- Map container -->
-                <div id="map" class="map-container"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>
+        Hi there! I'm a developer who likes building cool things, learning new
+        technologies, and constantly improving my skills.
+      </p>
+    </div>
+    <div class="container px-4">
+      <MagicBento
+        :card-data="cardData"
+        :text-auto-hide="true"
+        :enable-stars="false"
+        :enable-spotlight="true"
+        :enable-border-glow="true"
+        :enable-tilt="true"
+        :enable-magnetism="true"
+        :click-effect="true"
+        :spotlight-radius="300"
+        :particle-count="12"
+        glow-color="27, 39, 209"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import mapboxgl from "mapbox-gl";
+import MagicBento from "../components/MagicBento.vue";
+
+const cardData = [
+  {
+    color: "#091118",
+    label: "Project Spotlight",
+    title: "",
+    description: "Working on a new project",
+    body: '<a href="https://github.com/ramirezj129" target="_blank" rel="noopener"><i class="fab fa-github"></i><span class="ml-1">View Repo</span></a>',
+  },
+  {
+    color: "#091118",
+    label: "Currently Learning",
+    title: "",
+    description: "Leveraging AI and LLMs to build smarter applications",
+    body: '<i class="fas fa-brain"></i><i class="fas fa-robot"></i>',
+  },
+  {
+    color: "#091118",
+    label: "Location",
+    title: "",
+    description: "Houston, TX",
+    body: '<div id="map" class="home-map"></div>',
+  },
+  {
+    color: "#091118",
+    label: "My Links:",
+    title: "Lets Connect",
+    description:
+      "If you have any opportunities or advice to share, please feel free to message me.",
+    body: '<div class="link-grid"><a href="https://www.linkedin.com/in/ramirezj129/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a><a href="https://github.com/ramirezj129" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>GitHub</span></a><a href="https://www.kaggle.com/javier154" target="_blank" rel="noopener"><i class="fab fa-kaggle"></i><span>Kaggle</span></a><a href="/icons/Javier_Resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span>Resume</span></a></div>',
+  },
+  {
+    color: "#091118",
+    label: "",
+    title: "Tech I use",
+    description: "Favorite tools",
+    body: '<i class="fab fa-vuejs"></i> <i class="fab fa-js"></i> <i class="fab fa-node-js"></i> <i class="fa fa-database"></i>',
+  },
+  {
+    color: "#091118",
+    label: "Blog:",
+    title: "",
+    description: "Components and useful resources.",
+    body: '<a style="font-size: 17px;" href="/blog"><i class="fas fa-pen-nib mr-1"></i><span>Read Posts</span></a>',
+  },
+];
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
@@ -130,24 +97,49 @@ const preloadImages = () => {
   });
 };
 
-onMounted(() => {
+onMounted(async () => {
   document.documentElement.style.setProperty("--transition-duration", "0s");
 
   // Preload images
   preloadImages();
 
-  map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/javier154/clw875tcc007901p9bo4w5i63",
-    center: [-95.366739, 29.754075], // Houston coordinates [longitude, latitude]
-    zoom: 11,
-    accessToken: MAPBOX_ACCESS_TOKEN,
-  });
-
-  map.on("load", () => {
+  // Guard the map init: a missing/invalid Mapbox token must not crash the
+  // whole app (which would break routing and the nav).
+  if (!MAPBOX_ACCESS_TOKEN) {
+    console.warn(
+      "VITE_MAPBOX_ACCESS_TOKEN is not set — skipping map. Set it in Netlify env (or a local .env) to enable the map.",
+    );
     document.documentElement.style.removeProperty("--transition-duration");
-    mapInitialized.value = true;
-  });
+    return;
+  }
+
+  // The #map container lives inside a MagicBento card body (rendered via
+  // v-html). Wait for the DOM to settle so the element exists before mounting.
+  await nextTick();
+  const mapEl = document.getElementById("map");
+  if (!mapEl) {
+    console.warn("Map container #map not found — skipping map init.");
+    document.documentElement.style.removeProperty("--transition-duration");
+    return;
+  }
+
+  try {
+    map = new mapboxgl.Map({
+      container: mapEl,
+      style: "mapbox://styles/javier154/clw875tcc007901p9bo4w5i63",
+      center: [-95.366739, 29.754075], // Houston coordinates [longitude, latitude]
+      zoom: 11,
+      accessToken: MAPBOX_ACCESS_TOKEN,
+    });
+
+    map.on("load", () => {
+      document.documentElement.style.removeProperty("--transition-duration");
+      mapInitialized.value = true;
+    });
+  } catch (err) {
+    console.error("Failed to initialize Mapbox map:", err);
+    document.documentElement.style.removeProperty("--transition-duration");
+  }
 });
 
 onBeforeUnmount(() => {
@@ -306,6 +298,20 @@ onBeforeUnmount(() => {
 
 .map-container {
   height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+</style>
+
+<!--
+  Global (non-scoped) styles: the map lives inside a MagicBento card body
+  rendered with v-html, which scoped CSS cannot reach.
+-->
+<style>
+.home-map {
+  width: 100%;
+  height: 220px;
+  min-height: 180px;
   border-radius: 8px;
   overflow: hidden;
 }

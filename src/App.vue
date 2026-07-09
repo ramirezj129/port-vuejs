@@ -21,14 +21,33 @@ import { themeState } from "./theme";
   min-height: 100vh;
 }
 
+/* Dark theme */
 .dark_theme {
-  background-color: hsl(210deg, 30%, 8%) !important;
-  color: white;
+  --bg-color: hsl(210deg, 30%, 8%);
+  --text-color: #ffffff;
+  --hover-bg-color: hsl(210deg, 30%, 16%);
+  --hover-text-color: #ffffff;
+  --indicator-bg-color: rgba(255, 255, 255, 0.2);
+  --indicator-border-color: rgba(255, 255, 255, 0.35);
+  --active-indicator-bg-color: #ffffff;
+  --active-indicator-border-color: #ffffff;
+
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
 }
 
 /* Light theme */
 .light_theme {
-  background-color: white;
-  color: black;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --hover-bg-color: #f0f0f0;
+  --hover-text-color: #000000;
+  --indicator-bg-color: rgba(0, 0, 0, 0.2);
+  --indicator-border-color: rgba(0, 0, 0, 0.35);
+  --active-indicator-bg-color: #000000;
+  --active-indicator-border-color: #000000;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 </style>

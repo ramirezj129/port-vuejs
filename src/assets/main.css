@@ -1,0 +1,20 @@
+/*
+ * Tailwind v4 — utilities only, NO preflight.
+ * Preflight is deliberately omitted so Tailwind does not reset/override the
+ * existing Bootstrap styles used across the site.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* Gooey nav particle colors (referenced as var(--color-1..4)) */
+:root {
+  --color-1: #ff6b6b;
+  --color-2: #4ecdc4;
+  --color-3: #45b7d1;
+  --color-4: #f9ca24;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
