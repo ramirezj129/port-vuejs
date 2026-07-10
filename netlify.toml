@@ -1,3 +1,8 @@
+[build.environment]
+  # Tailwind v4 (@tailwindcss/oxide) requires Node >= 20; the default build
+  # image uses Node 18, which skips the native binding and fails the build.
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
